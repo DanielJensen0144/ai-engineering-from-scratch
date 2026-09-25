@@ -1,0 +1,4 @@
+# ignore model checkpoint files
+*.pt
+*.pth
+*.safetensors

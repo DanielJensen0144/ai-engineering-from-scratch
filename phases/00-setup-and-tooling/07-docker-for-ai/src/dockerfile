@@ -26,21 +26,22 @@ RUN curl -sSL https://raw.githubusercontent.com/pypa/get-pip/3b73145063be545b649
 RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
 
 RUN python -m pip install --no-cache-dir \
-    torch==2.5.1 \
-    torchvision==0.20.1 \
-    torchaudio==2.5.1 \
+    torch==2.6.0+cu124 \
+    torchvision==0.21.0+cu124 \
+    torchaudio==2.6.0+cu124 \
     --index-url https://download.pytorch.org/whl/cu124
 
 RUN python -m pip install --no-cache-dir \
     numpy \
     pandas \
+    polars \
     scikit-learn \
     matplotlib \
     jupyter \
     transformers \
     datasets \
     accelerate \
-    safetensors \
+    safetensors
 
 WORKDIR /workspace
 

@@ -88,3 +88,7 @@ i18n/*/phases/
 i18n/*/.cache/
 i18n/*/.translate-cache.json
 site/langs.js
+test-venv
+.venv
+my-venv
+.hf_token

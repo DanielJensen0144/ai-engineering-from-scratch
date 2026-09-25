@@ -1,0 +1,20 @@
+services:
+
+  ai-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - ../../../../:/workspace
+      - ~/models:/models
+      - ~/datasets:/data
+
+    ports:
+      - "8894:8894"
+
+    stdin_open: true
+
+    tty: true
+
+    command: jupyter notebook --ip=0.0.0.0 --port=8894 --no-browser --allow-root
