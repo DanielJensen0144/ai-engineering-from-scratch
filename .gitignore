@@ -92,3 +92,4 @@ test-venv
 .venv
 my-venv
 .hf_token
+.env
