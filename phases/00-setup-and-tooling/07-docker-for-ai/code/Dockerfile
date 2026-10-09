@@ -23,8 +23,6 @@ RUN curl -sSL https://raw.githubusercontent.com/pypa/get-pip/3b73145063be545b649
     && rm /tmp/get-pip.py \
     && update-alternatives --install /usr/bin/pip pip /usr/local/bin/pip3.12 1
 
-RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
 RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel
 
 RUN python -m pip install --no-cache-dir \
@@ -49,6 +47,9 @@ RUN python -m pip install --no-cache-dir \
     dotenv \
     tqdm \
     scipy
+
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /usr/local/bin/
+RUN uv --version
 
 WORKDIR /workspace
 
